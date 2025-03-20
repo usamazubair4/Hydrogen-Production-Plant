@@ -1,0 +1,57 @@
+# ── Plant Data (NEVER commit real process data) ───────────────────────────────
+*.csv
+*.xlsx
+*.xls
+data/
+Raw*/
+
+# ── Trained model artefacts (may embed data fingerprints) ────────────────────
+*.pkl
+*.joblib
+*.h5
+*.onnx
+
+# ── Python cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ── Virtual environment ───────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+.env
+pyvenv.cfg
+Lib/
+Scripts/
+Include/
+
+# ── Streamlit ─────────────────────────────────────────────────────────────────
+.streamlit/secrets.toml
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Diagnostic / patch output files ──────────────────────────────────────────
+_diag_output*.txt
+_patch_output*.txt
+
+# ── IDE / OS ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.code-workspace
+settings.local.json
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Build / distribution ──────────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
+site-packages/
+
+# ── EDA plots (generated — not source) ───────────────────────────────────────
+*.png
