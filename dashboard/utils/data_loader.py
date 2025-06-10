@@ -4,6 +4,8 @@ from pathlib import Path
 
 ROOT         = Path(__file__).resolve().parents[2]
 ENRICHED_CSV = ROOT / "Combined_Data_with_KPIs.csv"
+if not ENRICHED_CSV.exists():
+    ENRICHED_CSV = ROOT / "sample_data" / "Combined_Data_with_KPIs.csv"
 RAW_CSV      = ROOT / "Combined_Data.csv"
 
 # ── Design parameters ─────────────────────────────────────────────────────────
