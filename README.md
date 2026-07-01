@@ -6,6 +6,8 @@
 [![Plotly](https://img.shields.io/badge/Plotly-Interactive%20Charts-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](https://plotly.com)
 [![SHAP](https://img.shields.io/badge/SHAP-Explainability-FF6F61?style=for-the-badge)](https://shap.readthedocs.io)
 
+**Live app: https://hydrogen-appuction-plant-xhhtdm2szsjcdw2vgm3zmv.streamlit.app/**
+
 > **End-to-end machine learning platform for a Steam Methane Reformer (SMR) hydrogen plant.**
 > Covers CO quality prediction, compressor health monitoring, process optimisation, and predictive maintenance — all surfaced through a real-time Streamlit dashboard.
 
