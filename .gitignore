@@ -4,6 +4,9 @@
 *.xls
 data/
 Raw*/
+# Allow synthetic sample data (no real plant values)
+!sample_data/
+!sample_data/*.csv
 
 # ── Trained model artefacts (may embed data fingerprints) ────────────────────
 *.pkl
@@ -55,3 +58,8 @@ site-packages/
 
 # ── EDA plots (generated — not source) ───────────────────────────────────────
 *.png
+# Allow docs/screenshots (portfolio assets)
+!docs/
+!docs/screenshots/
+!docs/screenshots/*.png
+!docs/screenshots/*.gif

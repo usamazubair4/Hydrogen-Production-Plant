@@ -1,7 +1,17 @@
 # Hydrogen Production Plant — ML Intelligence Dashboard
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://hydrogen-appuction-plant-xhhtdm2szsjcdw2vgm3zmv.streamlit.app/)
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![XGBoost](https://img.shields.io/badge/XGBoost-Ensemble%20Model-189AB4?style=for-the-badge)](https://xgboost.readthedocs.io)
+[![Plotly](https://img.shields.io/badge/Plotly-Interactive%20Charts-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](https://plotly.com)
+[![SHAP](https://img.shields.io/badge/SHAP-Explainability-FF6F61?style=for-the-badge)](https://shap.readthedocs.io)
+
 > **End-to-end machine learning platform for a Steam Methane Reformer (SMR) hydrogen plant.**
 > Covers CO quality prediction, compressor health monitoring, process optimisation, and predictive maintenance — all surfaced through a real-time Streamlit dashboard.
+
+---
+
+![Dashboard Demo](docs/screenshots/dashboard_demo.gif)
 
 ---
 
@@ -29,15 +39,15 @@ The platform ingests historian data, computes ~50 process KPIs, trains an ensemb
 
 ## Dashboard Pages
 
-```
-Overview            — Plant KPIs at a glance, CO trend, compressor summary, operating conditions table
-Performance         — Efficiency (Sp. Heat Consumption), process parameters, material balance heatmap, analyzers
-Quality Prediction  — ML CO prediction, spec margin tiles, alert distribution, HTS thermodynamic physics features
-Reliability         — Compressor fleet health cards, health index trend, sub-score tiles, raw sensor data
-Optimisation        — Steam reduction opportunity, yield KPIs, efficiency vs design, CO spec margin trending
-Simulation          — What-if scenario analysis: slider controls → current vs simulated comparison
-Maintenance         — Predictive maintenance scheduling, health projection, priority matrix, Gantt timeline
-```
+| Page | Screenshot |
+|---|---|
+| **Overview** — KPIs, CO trend, compressor summary, operating conditions | ![Overview](docs/screenshots/overview.png) |
+| **Performance** — Specific Heat Consumption, material balance heatmap, analyzers | ![Performance](docs/screenshots/performance.png) |
+| **Quality Prediction** — ML CO prediction, spec margin tiles, alert distribution | ![Quality](docs/screenshots/quality.png) |
+| **Reliability** — Fleet health cards, health index trend, sub-score tiles | ![Reliability](docs/screenshots/reliability.png) |
+| **Optimisation** — Steam reduction, yield KPIs, efficiency vs design | ![Optimisation](docs/screenshots/optimisation.png) |
+| **Simulation** — What-if slider controls → current vs simulated results | ![Simulation](docs/screenshots/simulation.png) |
+| **Maintenance** — Predictive scheduling, health projection, priority matrix | ![Maintenance](docs/screenshots/maintenance.png) |
 
 ---
 
@@ -110,14 +120,12 @@ source venv/bin/activate
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Add your enriched data file
-# Place Combined_Data_with_KPIs.csv in the project root
-# (See Data Pipeline section below to generate it from raw historian data)
-
-# 5. Run the dashboard
+# 4. Run the dashboard
 cd dashboard
 streamlit run app.py
 ```
+
+> **The app runs immediately after cloning.** A synthetic 30-day sample dataset is included in `sample_data/` — no data file setup required. To use real historian data, place `Combined_Data_with_KPIs.csv` in the project root and the dashboard will use it automatically.
 
 ---
 
@@ -183,6 +191,9 @@ Each sub-score is normalised (0–100) using IQR-based scaling relative to healt
 │   ├── app.py
 │   ├── pages/
 │   └── utils/
+├── sample_data/                # Synthetic demo dataset (safe to commit)
+│   └── Combined_Data_with_KPIs.csv
+├── docs/screenshots/           # Dashboard screenshots for portfolio
 ├── co_product_model.py         # Ensemble CO predictor
 ├── compressor_reliability.py   # Fleet health scoring
 ├── feature_engineering.py      # Thermodynamic feature computation
